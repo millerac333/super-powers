@@ -35,8 +35,26 @@ document.querySelector("#activate-xray").addEventListener("click", function () {
         powerStatus(xray, "power-disabled", "power-enabled")
 })
 
+//-------------------------------------------------------------------------------------//
+
+
 /*
     Write two more event handlers for activating and deactivating all powers
     when the corresponding buttons are clicked. You will need to use the
     `document.querySelectorAll()` method for these.
 */
+const section = document.querySelectorAll("section")
+
+document.querySelector("#activate-all").addEventListener("click", function() {
+    section.forEach(function(superpower){
+        superpower.className = ""
+        superpower.classList.toggle("power-enabled")
+    })
+})
+
+document.querySelector("#deactivate-all").addEventListener("click", function () {
+    section.forEach(function (superpower) {
+        superpower.className = ""
+        superpower.classList.toggle("power-disabled")
+    })
+})
